@@ -1,8 +1,9 @@
 # Step install CUDA6.5 on Ubuntu14.04
 
- 	before install cuda ,please close secure boot in bios
+ 	*** Before install cuda ,please close secure boot in bios ***
 	
-	how to check nvidia support
+	How to check nvidia support
+  
 	lspci | grep -i nvidia
 			
 # 1.install dependencies
@@ -12,12 +13,12 @@
     2.1 nano /etc/modprobe.d/blacklist-nouveau.conf
 		
     2.2 add these lines to it
-    	2.2.1 blacklist nouveau
-    	2.2.2 blacklist lbm-nouveau
-			2.2.3 options nouveau modeset=0
-			2.2.4 alias nouveau off
-			2.2.5 alias lbm-nouveau off
-			
+      2.2.1 blacklist nouveau
+      2.2.2 blacklist lbm-nouveau
+      2.2.3 options nouveau modeset=0
+      2.2.4 alias nouveau off
+      2.2.5 alias lbm-nouveau off
+		 
     2.3 echo options nouveau modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf
 		
     2.4 sudo update-initramfs -u
